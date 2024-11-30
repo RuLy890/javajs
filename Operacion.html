@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones con Variables</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Operaciones de variables</h1>
+    </header>
+   
+
+    <div id = "resulta"></div>
+
+    <script type="text/javascript">
+
+        //Variables
+        var numero = 8;
+        var numero2 = 12;
+
+        //Suma
+        var suma = numero + numero2;
+        document.getElementById('resulta').innerHTML += "Suma de " + numero + " + " + numero2 + " = " + suma + "<br><br>";
+
+         // Resta
+         var resta = numero - numero2;
+        document.getElementById('resulta').innerHTML += "Resta de " + numero + " - " + numero2 + " = " + resta + "<br><br>";
+
+        // Multiplicación
+        var multiplicacion = numero * numero2;
+        document.getElementById('resulta').innerHTML += "Multiplicación de " + numero + " * " + numero2 + " = " + multiplicacion + "<br><br>";
+
+        // División
+        var division = numero / numero2;
+        document.getElementById('resulta').innerHTML += "División de " + numero + " / " + numero2 + " = " + division + "<br><br>";
+
+        // Módulo
+        var modulo = numero % numero2;
+        document.getElementById('resulta').innerHTML += "Módulo de " + numero + " % " + numero2 + " = " + modulo + "<br><br>";
+
+        // Valores booleanos
+        var valor1 = true;
+        var valor2 = false;
+
+        // Comparación OR (||)
+        var comparacionOr = valor1 || valor2;
+        document.getElementById('resulta').innerHTML += "Comparación OR: " + valor1 + " || " + valor2 + " = " + comparacionOr + "<br><br>";
+
+        // Comparación AND (&&)
+        var comparacionAnd = valor1 && valor2;
+        document.getElementById('resulta').innerHTML += "Comparación AND: " + valor1 + " && " + valor2 + " = " + comparacionAnd + "<br><br>";
+
+        document.getElementById("resulta").innerHTML += "<hr>";
+
+    </script>
+
+    <header>
+        <h2>Array</h2>
+        <ul id="listaDias"></ul>
+    </header>
+
+
+    <h2>Operaciones con Arrays</h2>
+
+    <p id="operaciones"></p> 
+
+    <script type="text/javascript">
+        // Definimos el array
+        var dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+
+        // Mostrar todos los días en una lista desordenada (ul)
+        var listaDias = document.getElementById('listaDias');
+        dias.forEach(function(dia) {
+            var li = document.createElement('li'); 
+            li.textContent = dia;  
+            listaDias.appendChild(li); 
+        });
+
+        // Realizamos algunas operaciones con el array
+        var operaciones = document.getElementById('operaciones');
+
+        // Sumar días
+        var diasLaborables = dias.slice(0, 5);
+        operaciones.innerHTML += "Días laborables: " + diasLaborables.join(", ") + "<br>";
+
+        // Añadir un día festivo
+        dias.push("Feriado");
+        operaciones.innerHTML += "Añadido un día festivo: " + dias.join(", ") + "<br>";
+
+        // Quitar el último día
+        dias.pop();
+        operaciones.innerHTML += "Eliminado el último día: " + dias.join(", ") + "<br>";
+
+        // Cambiar "Miércoles" por "Miércolito"
+        dias[2] = "Miércolito";
+        operaciones.innerHTML += "Cambiar Miércoles por Miércolito: " + dias.join(", ") + "<br>";
+
+        operaciones.innerHTML += "<hr>";
+
+    </script>
+
+    <header>
+        <h1>Estructura</h1>
+    </header>
+
+    <nav>
+        <h2>Resultado de IF</h2>
+        <p id="ifResult"></p>
+    
+        <h2>Resultado de IF ELSE</h2>
+        <p id="ifElseResult"></p>
+    
+        <h2>Resultado de SWITCH</h2>
+        <p id="switchResult"></p>
+    
+        <h2>Resultado de WHILE</h2>
+        <p id="whileResult"></p>
+    
+        <h2>Resultado de FOR</h2>
+        <p id="forResult"></p>
+    </nav>
+
+    <script type="text/javascript">
+        // Ejemplo 1: IF
+        var numero = 10;
+        var ifResult = document.getElementById('ifResult');
+
+        if (numero > 5) {
+            ifResult.textContent = "El número es mayor que 5.";
+        }
+
+        // Ejemplo 2: IF ELSE
+        var edad = 18;
+        var ifElseResult = document.getElementById('ifElseResult');
+
+        if (edad >= 18) {
+            ifElseResult.textContent = "Eres mayor de edad.";
+        } else {
+            ifElseResult.textContent = "Eres menor de edad.";
+        }
+
+        // Ejemplo 3: SWITCH
+        var dia = 3;
+        var switchResult = document.getElementById('switchResult');
+        
+        switch (dia) {
+            case 1:
+                switchResult.textContent = "Es lunes.";
+                break;
+            case 2:
+                switchResult.textContent = "Es martes.";
+                break;
+            case 3:
+                switchResult.textContent = "Es miércoles.";
+                break;
+            case 4:
+                switchResult.textContent = "Es jueves.";
+                break;
+            case 5:
+                switchResult.textContent = "Es viernes.";
+                break;
+            default:
+                switchResult.textContent = "Es fin de semana.";
+        }
+
+        // Ejemplo 4: WHILE
+        var count = 1;
+        var whileResult = document.getElementById('whileResult');
+        var resultadoWhile = "";
+
+        while (count <= 5) {
+            resultadoWhile += "Contando: " + count + "<br>";
+            count++;
+        }
+
+        whileResult.innerHTML = resultadoWhile;
+
+        // Ejemplo 5: FOR
+        var forResult = document.getElementById('forResult');
+        var resultadoFor = "";
+
+        for (var i = 1; i <= 5; i++) {
+            resultadoFor += "Iteración número: " + i + "<br>";
+        }
+
+        forResult.innerHTML = resultadoFor;
+
+        document.write("<hr>");
+
+    </script>
+
+    <header>
+        <h2>Funciones</h2>
+    </header>
+
+    <script type="text/javascript">
+        function suma() {
+            resultado = numero1 + numero2;
+            document.write("El resultado es " + resultado + "<br>");
+        }
+
+        var resultado;
+        var numero1 = 3;
+        var numero2 = 5;
+        suma();
+    </script>
+
+    <h2>Función con retorno de valores</h2>
+    <script type="text/javascript">
+        function centigrados_Fahrenheit(celsius) {
+            var cTemp = celsius;
+            var cToFahr = cTemp * 9 / 5 + 32;
+            var message = cTemp + '\xB0C son ' + cToFahr + ' \xB0F.';
+            return message;
+        }
+        
+        // Llamada a la función con retorno
+        var resultadoTemp = centigrados_Fahrenheit(60);
+        document.write(resultadoTemp + "<br>");
+    </script>
+
+    <h2>Función con parámetros</h2>
+    <script type="text/javascript">
+        function multiplicar(a, b) {
+            return a * b;
+        }
+
+        var resultadoMultiplicacion = multiplicar(4, 5);
+        document.write("La multiplicación de 4 * 5 es: " + resultadoMultiplicacion + "<br>");
+    </script>
+
+    <h2>Funciones anónimas</h2>
+    <script type="text/javascript">
+        // Función anónima almacenada en una variable
+        var resta = function(a, b) {
+            return a - b;
+        };
+
+        var resultadoResta = resta(10, 3);
+        document.write("La resta de 10 - 3 es: " + resultadoResta + "<br>");
+    </script>
+
+    <h2>Funciones flecha (arrow functions)</h2>
+    <script type="text/javascript">
+        // Usando arrow function
+        var division = (a, b) => a / b;
+
+        var resultadoDivision = division(10, 2);
+        document.write("La división de 10 / 2 es: " + resultadoDivision + "<br>");
+    </script>
+
+    <h2>Función que usa el valor retornado de otra función</h2>
+    <script type="text/javascript">
+        function obtenerAreaRectangulo(largo, ancho) {
+            return largo * ancho;
+        }
+
+        function mostrarArea(largo, ancho) {
+            var area = obtenerAreaRectangulo(largo, ancho);
+            document.write("El área del rectángulo es: " + area + "<br>");
+        }
+
+        // Llamada a la función
+        mostrarArea(10, 5);
+
+        document.write("<hr>");
+    </script>
+
+    <h2>Eventos</h2>
+
+    <title>Ejemplo de Eventos en JavaScript</title>
+    <style>
+        /* Estilos para la imagen */
+        .imagen-pequena {
+            width: 70px;
+            height: 70px;
+            transition: width 0.3s, height 0.3s;
+        }
+        .imagen-grande {
+            width: 100px;
+            height: 100px;
+        }
+
+          /* Estilos para el botón */
+          #agradecimiento {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        #agradecimiento:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+    <script type="text/javascript">
+        // Función para cambiar el color de fondo
+        function cambiarColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+        // Función para agrandar la imagen
+        function agrandarImagen(imagen) {
+            imagen.classList.add("imagen-grande");
+        }
+
+        // Función para reducir la imagen
+        function reducirImagen(imagen) {
+            imagen.classList.remove("imagen-grande");
+        }
+
+         // Función para mostrar mensaje de agradecimiento
+         function mostrarAgradecimiento() {
+            const mensaje = document.createElement("p");
+            mensaje.textContent = "¡Gracias por picarle al botón!";
+            mensaje.style.fontSize = "18px";
+            mensaje.style.color = "#333";
+            document.body.appendChild(mensaje);
+        }
+
+    </script>
+
+</head>
+
+<body onload="cambiarColor('#f0f0f0')">
+
+    <center>
+        <h1>Interacción con Eventos</h1>
+        <p>Usa los eventos para cambiar el color de fondo o el tamaño de la imagen.</p>
+
+        <!-- Evento onmouseover y onmouseout para cambiar el color de fondo -->
+        <a onmouseover="cambiarColor('#E1E9AF')" onmouseout="cambiarColor('#f0f0f0')" href="#">
+            <img src="images/verde.avif" class="imagen-pequena" alt="Imagen 1">
+        </a>
+
+        <a onmousedown="cambiarColor('#62BDB1')" onmouseup="cambiarColor('#f0f0f0')" href="#" onmouseover="agrandarImagen(this.children[0])" onmouseout="reducirImagen(this.children[0])">
+            <img src="images/Azul.jpg" class="imagen-pequena" alt="Imagen 2">
+        </a
+
+        <!-- Evento onmouseover y onmouseout para cambiar el tamaño de la imagen -->
+        <a href="#" onmouseover="agrandarImagen(this.children[0])" onmouseout="reducirImagen(this.children[0])">
+            <img src="images/rojo.jpg" class="imagen-pequena" alt="Imagen 3">
+        </a>
+
+          <!-- Botón con evento onclick para mostrar mensaje de agradecimiento -->
+          <button id="agradecimiento" onclick="mostrarAgradecimiento()">Haz clic aquí</button>
+
+    </center>
+
+    <hr>
+
+    <h2>Validaciones</h2>
+
+    <style>
+         .error {
+            color: #FF4000;
+            font-size: 0.9em;
+        }
+        .success {
+            color: #59B200;
+            font-size: 0.9em;
+        }
+    </style>
+
+<script>
+       function validateForm() {
+            var name = document.forms["myForm"]["fname"].value;
+            var nameError = document.getElementById("nameError");
+
+            if (name == "") {
+                nameError.textContent = "El nombre es obligatorio";
+                return false;
+            } else {
+                nameError.textContent = "";
+            }
+            return true;
+        }
+
+        function confirmarClave() {
+            var p1 = document.getElementById("confirmarclave").value;
+            var p2 = document.getElementById("clave").value;
+            var claveError = document.getElementById("claveError");
+
+            // Validar espacios en blanco
+            if (/\s/.test(p1)) {
+                claveError.textContent = "La contraseña no puede contener espacios en blanco.";
+                document.getElementById("confirmarclave").style.borderColor = "#FF4000";
+                document.getElementById("clave").style.borderColor = "#FF4000";
+                return false;
+            } else {
+                claveError.textContent = "";
+            }
+
+            // Validar que los campos no estén vacíos
+            if (p1.length === 0 || p2.length === 0) {
+                claveError.textContent = "Los campos de contraseña no deben estar vacíos.";
+                document.getElementById("confirmarclave").style.borderColor = "#FF4000";
+                document.getElementById("clave").style.borderColor = "#FF4000";
+                return false;
+            } else {
+                claveError.textContent = "";
+            }
+
+            // Validar que ambas contraseñas coincidan
+            if (p1 !== p2) {
+                claveError.textContent = "Las contraseñas deben coincidir.";
+                document.getElementById("confirmarclave").style.borderColor = "#FF4000";
+                document.getElementById("clave").style.borderColor = "#FF4000";
+                return false;
+            } else {
+                claveError.textContent = "";
+                document.getElementById("confirmarclave").style.borderColor = "#59B200";
+                document.getElementById("clave").style.borderColor = "#59B200";
+                return true;
+            }
+        }
+
+        function validarTodo() {
+            var isValid = validateForm() && confirmarClave();
+            if (isValid) {
+                mostrarMensajeExito();
+            }
+            return false; // Evitamos el envío real del formulario para mostrar el mensaje de éxito
+        }
+
+        function mostrarMensajeExito() {
+            var successMessage = document.getElementById("successMessage");
+            successMessage.textContent = "Te has registrado correctamente.";
+            successMessage.classList.add("success");
+        }
+</script>
+
+<form name="myForm" onsubmit="return validarTodo()" method="post">
+    <label for="fname">Nombre:</label>
+    <input type="text" id="fname" name="fname" oninput="validateForm()">
+    <span id="nameError" class="error"></span>
+    <br><br>
+
+    <label for="clave">Contraseña:</label>
+    <input type="password" id="clave" name="clave" oninput="confirmarClave()">
+    <br><br>
+
+    <label for="confirmarclave">Confirmar Contraseña:</label>
+    <input type="password" id="confirmarclave" name="confirmarclave" oninput="confirmarClave()">
+    <span id="claveError" class="error"></span>
+    <br><br>
+
+    <input type="submit" value="Enviar">
+</form>
+
+<p id="successMessage"></p>
+
+<hr>
+
+<h2>Encuesta para registrar</h2>
+<a href="Encuesta.html" target="_parent">Entra a la Encuenta</a>
+
+</body>
+</html>
